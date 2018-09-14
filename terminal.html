@@ -13,7 +13,7 @@
       <li>Généralité sur le Linux</li>
       <li>C'est quoi un Terminal</li>
       <li>Fonctionnalité du Terminal</li>
-      <li>Les avantages de Terminal</li>
+      <li>Les avantages du Terminal</li>
     </ol>
     <h2>Généralité sur le Linux</h2>
       <h4>L'inux est un  système d'exploitation créé par l’étudiant finlandais Linus Torvalds En 1991 se basant sur le serveur informatique UNIX pour le rendre plus pratique et plus disponible.</h4>
@@ -21,8 +21,228 @@
     <h2>C'est quoi un Terminal</h2>
       <h4>Le Terminal est un systeme de console sur le noyau Linux, ou elle exécute des commandes données par l'utilisateur directement en écrivant ce qu'il veut faire exécuter sans devoir faire manuellement.</h4>
     <h2>Fonctionnalité du Terminal</h2>
-      <h3>Commandes basiques</h3>
-    <h2>Les avantages de Terminal</h2>
+      <h3><em><strong>"ls":</strong></em> La commande ls permet d'afficher le contenu d'un répertoire.</h3>
+        <ul>
+          <li>"ls -l": Afficher les informations de manière détaillée.</li>
+
+          <li>"ls -a": Afficher les fichiers cachés.</li>
+
+          <li>"ls -h": Afficher la taille des fichiers de facon lisible.</li>
+
+          <li>"ls -r": Tri inversé.</li>
+
+          <li>"ls -t": Trier les fichiers par date du plus récent au plus ancien.</li>
+
+          <li>"ls -S": Trier par taille décroissante.</li>
+
+          <li>"ls -": la Afficher tous les fichiers y compris les fichiers cachés.</li>
+
+          <li>"ls -lhS": Afficher les informations des fichiers, avec des tailles lisibles le tout ordonné du plus grand au plus petit.</li>
+        </ul>
+      <h3> <strong><em>"cd":</em></strong> La navigation d’un répertoire à un autre s’effectue avec la commande cd succédée du nom du répertoire.</h3>
+        <ul>
+          <li>"cd /": Permet de se retrouver à la racine du disque.</li>
+
+          <li>"cd ~": ou cd Accéder directement au répertoire de l’utilisateur.</li>
+
+          <li>"cd /var/www/": Aller dans le répertoire /var/www.</li>
+
+          <li>"cd ..": Remonter dans le répertoire parent à partir de là où vous êtes.</li>
+
+          <li>"cd -": Permet de revenir au répertoire précédent.</li>
+
+          <li>"pwd": Renvoyer le chemin absolu du répertoire courant ce qui est utile puisqu’en général le shell n’affiche que le nom du répertoire courant.</li>
+        </ul>
+      <h3><strong><em>"cp":</em></strong> Pour créer une copie d’un fichier, on utilise la commande cp.</h3>
+        <ul>
+          <li>"cp foo/bar.txt baz/": Copier le fichier bar.txt dans le répertoire baz.</li>
+
+          <li>"cp -r foo/ baz/": Copier des répertoires entiers (note : si baz existe, la cible sera baz/foo/).</li>
+        </ul>
+        <h3><strong><em>"mv":</em></strong> Déplacer un fichier est aussi simple que de le copier, pour cela il faut utiliser la commande mv. Cette commande permet aussi de renommer vos fichiers.</h3>
+          <ul>
+            <li>"mv foo/bar.txt baz/": Déplacer le fichier bar.txt dans le répertoire baz.</li>
+
+            <li>"mv foo_bar.txt foo_baz.txt": Renommer le fichier foo_bar.txt en foo_baz.txt.</li>
+          </ul>
+        <h3><strong><em>"rm":</em></strong> Pour effacer un fichier ou un répertoire on utilise la commande rm.</h3>
+          <ul>
+            <li>"rm *.txt": Supprimer tous les fichiers ayant pour extension txt.</li>
+
+            <li>"rm foo.txt bar.txt": Supprimer les fichiers foo.txt et bar.txt.</li>
+
+            <li>"rm -rf baz/": Supprimer le répertoire baz et tout son contenu.</li>
+          </ul>
+        <h3><strong><em>"mkdir":</em></strong> Pour créer un répertoire il suffit d’utiliser la commande mkdir. Celle-ci vous permettra de créer un répertoire à l’emplacement où vous êtes ou l’emplacement précisé en argument de la commande.</h3>
+          <ul>
+            <li>"mkdir -v": Retourner des informations lors de la création d'un répertoire.</li>
+
+            <li>"mkdir -p": Cette option permet de créer une arborescence complète.</li>
+
+            <li>"mkdir foo": Créer le répertoire foo.</li>
+
+            <li>mkdir -v": foo /tmp/bar Créer les répertoires foo et /tmp/bar.</li>
+
+            <li>mkdir -p": foo/bar/baz Créer l’arborescence foo/bar/baz.</li>
+          </ul>
+        <h3><strong><em>"chown":</em></strong> La commande chown permet de changer le propriétaire d'un fichier ou d'un répertoire.</h3>
+          <ul>
+            <li><strong><em>"chown bob:admin foo.txt":</em></strong> Attribuer l’utilisateur bob et le groupe admin au fichier foo.txt.</li>
+          </ul>
+        <h3><strong><em>"chmod":</em></strong> La commande chmod permet de changer les droits d'un fichier ou d'un répertoire. Pour exécuter cette commande vous devez être le propriétaire du fichier ou être logué en root.</h3>
+          <ul>
+            <li>"chmod u+w": fichier Ajouter les droits d'écriture au propriétaire (user, write)</li>
+
+            <li>"chmod g+r fichier Ajouter les droits de lecture au groupe du fichier (group, read)</li>
+
+            <li>"chmod o-x fichier Supprimer les droits d'exécution aux autres utilisateurs (other, execution)</li>
+
+            <li>"chmod a+rw dossier Ajouter les droits de lecture / écriture à tous (all)</li>
+
+            <li>"chmod -R a+rx files Ajouter les droits de lecture et d'exécution à tout ce que contient le repertoire dossier.</li>
+
+            <li>"chmod 764 dossier Tous les droits pour le propriétaire (7xx), lecture et ecriture pour le groupe (x6x) et lecture uniquement pour les autres (xx4).</li>
+
+            <li>"chmod -R 755 dossier Donner au propriétaire tous les droits (7xx), alors que seuls les droits de lecture et d'accès seront donnés aux autres (x55). Grace à l'option -R ces droits seront appliqués à tous les fichiers et dossiers contenus dans ce répertoire.</li>
+          </ul>
+        <h3><strong><em>"ssh":</em></strong> La commande ssh permet de se connecter de façon sécurisée à une machine distante.</h3>
+          <ul>
+            <li>"ssh john@remotehost.example.com": Connexion à la machine distante avec le login john.</li>
+
+            <li>"ssh -l john remotehost.example.com": Equivaut à la commande précédente.</li>
+
+            <li>"ssh-keygen -t dsa" Génération d'une clé DSA (à faire sur la machine locale).</li>
+
+            <li>"ssh-copy-id -i ~/.ssh/id_dsa.pub john@remotehost.example.com" Copie de la clé publique sur la machine distante.</li>
+          </ul>
+
+        <h3><strong><em>"scp":</em></strong> La commande scp permet de copier des fichiers entre le serveur et le client ssh de manière sécurisée.</h3>
+          <ul>
+            <li>"scp foo.txt john@remotehost.example.com": Transfère le fichier foo.txt situé dans le répertoire courant vers le home du compte john de la machine remotehost.example.com.</li>
+
+            <li>"scp john@remotehost.example.com:foo.txt ./ Récupère le fichier foo.txt situé dans le home du répertoire du compte john pour le copier dans le répertoire courant.</li>
+
+            <li>"scp john@remotehost.example.com:/backups/*.sql backups/ Récupérer les fichiers .sql situés dans le répertoire backups pour le copier dans le sous-répertoire backups.</li>
+
+            <li>"scp -P 17654 john@remotehost:/files/ files/ Récupérer les fichiers via un autre port (17654) que le port par défaut (22).</li>
+
+            <li>"scp -r mails/ john@remotehost: Transfère l'intégralité du répertoire mails.</li>
+          </ul>
+        <h3><strong><em>"rsync":</em></strong>Grâce à la commande rsync vous pouvez copier des fichiers et des dossiers depuis ou vers un hôte à distance. Grâce à cela vous pouvez faire de la synchronisation de fichiers.</h3>
+          <ul>
+            <li>"rsync source/ destination/": Synchroniser les fichiers sources vers une destination.</li>
+            <li>"rsync -azv john@remotehost.example.com:source/ destination/": Récupère les nouveaux fichiers et fichiers modifiés du répertoire distant vers le répertoire local.
+
+            <li>"rsync -azv --delete source/ destinatio<li>"n/": Synchroniser tous les fichiers, supprime aussi les fichiers qui n'existent plus sur la source.
+
+            <li>"rsync -azv --exclude="dump/*.sql.gz" files/ backup/": Synchroniser tout le répertoire files sauf les fichiers .sql.gz.
+
+            <li>"rsync --rsh='ssh -p1234' ource/ destination/": Effectuer un rsync sur un port spécifique.</li>
+          </ul>
+        <h3><strong><em>"sed":</em></strong>La commande sed est un utilitaire qui parcourt un fichier texte ligne par ligne afin de lui appliquer un traitement ou un remplacement lorsque l'expression régulière est vérifiée.</h3>
+          <ul>
+            <li>"sed 's/foo/bar/' file.txt": Transformer la première occurence 'foo' de chaque ligne par 'bar'.</li>
+
+            <li>"sed 's/\t/ /g' file.txt": Transformer toutes les tabulations par deux espaces.</li>
+
+            <li>"sed '/^#/ d' file.txt": Supprimer toutes les lignes commancant par #.</li>
+
+            <li>"sed '/^Bonjour/,/^Au revoir/d' file.txt": Supprimer toutes les lignes comprises entre les deux motifs.</li>
+
+            <li>"sed -n '/foo/p' file.txt": Afficher uniquement les lignes où l'expression est trouvée.</li>
+          </ul>
+        <h3><strong><em>"grep":</em></strong> La commande grep permet de rechercher une chaîne de caractères ou un motif dans un fichier.</h3>
+          <ul>
+            <li>"grep 'text' foo.txt" Recherche l'occurence 'text' dans le fichier foo.txt.</li>
+
+            <li>"grep -nri 'foobar' /project" Recherche toutes les occurences de 'foobar' dans le repertoire /project.</li>
+
+            <li>"grep -nri '\(foo\|bar\|baz\)' /project" Recherche toutes les occurences à 'foo', 'bar' et 'baz' dans le repertoire /project.</li>
+          </ul>
+        <h3><strong><em>"find":</em></strong> La commande find permet de chercher des fichiers et éventuellement d'exécuter des commandes dessus.</h3>
+          <ul>
+
+            <li>"find -name *myfile*.txt -print Rechercher un fichier contenant "myfile" et ayant pour extention ".txt"</li>
+
+            <li>"find /usr -type d -print" Afficher tous les répertoires de /usr</li>
+
+            <li>"find $HOME \( -name '*.txt' -o -name '*.pdf' \)" Afficher tous les fichiers .txt ou .pdf dans le répertoire home de l'utilisateur.</li>
+
+            <li>"find $HOME -name *.txt -atime +7 -exec rm {} \;" Supprimer tous les fichiers .txt qui n'ont pas été consultés depuis plus de 7 jours dans le répertoire home de l'utilisateur.</li>
+
+            <li>"find $HOME -name '*.txt' -size +4k -exec ls -l {} \;" Afficher la taille de tous les fichiers de plus de 4 kilos.</li>
+          </ul>
+        <h3><strong><em>"test"</em></strong> La commande test permet comparer des chaines de caractères, des nombres et vérifier certaines propriétés de fichiers. Il est possible de simplifier son écriture en la remplaçant par des crochets [ ].</h3>
+          <ul>
+            <li>"test -e foo.txt": tester si le fichier foo.txt existe.</li>
+
+            <li>"test -d foo": tester que foo soit un répertoire.</li>
+
+            <li>"test -w foo.txt": tester si le fichier est accessible en écriture.</li>
+
+            <li>"test -x foo.txt": tester si le fichier est exécutable.</li>
+
+            <li>"[ "string1" != "string2" ]": vérifier que la chaine string1 n'est pas égale à string2.</li>
+
+            <li>"[ int1 != int2 ]": vérifier que le nombre int1 est inférieur à int2.</li>
+          </ul>
+        <h3><strong><em>"Packages":</em></strong> L'installation et la désinstallation de paquets sous Debian, Ubuntu et distribution dérivées peut se faire grâce à la commande apt.</h3>
+          <ul>
+            <li>"apt-get update": Mettre à jour la liste des fichiers disponibles dans les dépôts APT.
+
+            <li>"apt-get install": samba Installer du paquet Samba.</li>
+
+            <li>"apt-get install foo=2.2-1": Installer du paquet foo dans sa version 2.2-1.</li>
+
+            <li>"apt-get remove samba": Désinstallation du paquet Samba tout en laissant les fichiers de configuration.</li>
+
+            <li>"apt-get purge samba": Suppression complète du paquet Samba et de ses fichiers de configuration.</li>
+
+            <li>"apt-cache policy php5": Récupération d'informations sur l'état du paquet php5</li>
+
+            <li>"dpkg -l | grep php": Lister tous les paquets php installés sur la machine.</li>
+          </ul>
+        <h3><strong><em>"Archives":</em></strong> Que ce soit pour compresser ou décompresser des fichiers ou des dossiers, cela se fait avec la commande tar.</h3>
+          <ul>
+            <li>"tar -cvf archive.tar fichier1": Création d’une archive nommée archive.tar contenant le fichier fichier1.</li>
+
+            <li>"tar -cvf archive.tar fichier1 fichier2": Création d’une archive contenant deux fichiers fichier1 et fichier2.</li>
+
+            <li>"tar -cvf archive.tar repertoire/": Création d’une archive a partir d’un répertoire.</li>
+
+            <li>"tar -czvf archive.tar.gz repertoire/": Création d’une archive au format tar.gz.</li>
+
+            <li>"tar -cjvf archive.tar.bz2 repertoire/": Création d’une archive au format tar.bz2.</li>
+
+            <li>"tar -xzvf archive.tar.gz": Extraction de l’archive tar.gz.</li>
+
+            <li>"tar -xjvf archive.tar.bz2": Extraction de l’archive tar.bz2.</li>
+
+            <li>"tar -tf mon_fichier.tar": Liste tous les fichiers contenus dans une archive.</li>
+            </ul>
+          <h3><strong><em>"Espace disque":</em></strong></h3>
+          <ul>
+            <li>"du -sh dossier1 dossier2": connaitre l'espace disque utilisé des deux répertoires (disk usage).</li>
+
+            <li>"du -hc --max-depth=1": afficher l'espace disque utilisé des fichiers et répertoires contenu dans un répertoire.</li>
+
+            <li>"df -h": afficher l'espace disque disponible (disk free).</li>
+          </ul>
+        <h3><strong><em>"Gestion des processus":</em> </strong></h3>
+        <ul>
+          <li>"top Classement en live des processus en cours triés par utilisation Proc, Mem ou Temps CPU.
+
+          <li>"free" Afficher la mémoire libre.</li>
+
+          <li>"ps" aux Afficher tous les processus exécutés.</li>
+
+          <li>"ps" faux Afficher tous les processus exécutés affiché sous forme.</li>
+
+          <li>"kill pid" Arrêter un processus.</li>
+
+          <li>"kill ­9 pid" Tuer violemment le processus (déconseillé).</li>
+        </ul>
+    <h2>Les avantages du Terminal</h2>
       <h3></h3>
   </body>
 </html>
