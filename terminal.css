@@ -1,0 +1,50 @@
+h1
+{
+	font-style: center;
+	color: rgb(0,0,0);
+	border: solid;
+	margin-left: 40%;
+	margin-right: 40%;
+	
+	font-size: 35px;
+}
+.img 
+{
+	border-radius: 20px;
+	float: right;
+}
+body
+{
+	font-style: justify;
+	background: beige;
+
+}
+h3
+{
+	font-family: Times, "Times New Roman", Georgia, serif;
+	font-size: 20px;
+
+}
+h2
+{
+	color: rgb(30,50,100);
+	font-size: 25px;
+}
+ol, ul
+{
+	font-family: Times, "Times New Roman", Georgia, serif;
+	font-size: 20px;
+}
+p
+{
+	font-family: Times, "Times New Roman", Georgia, serif;
+	font-size: 20px;
+}
+h4
+{
+	font-size: 20px;
+}
+h3
+{
+	color: rgb(100,38,100);
+}
