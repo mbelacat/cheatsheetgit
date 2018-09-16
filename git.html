@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css" >
-    <title>CH</title>
+    <title>CHEAT SHEET</title>
 
 
 
@@ -26,11 +26,65 @@
   </head>
   <body>
 
-      <h1>Aide memoire commandes GIT</h1>
+    <h1>GIT</h1>
+    <h4>SOMMAIRE:</h4>
+      <ol>
+        <li><a href="#generality"> Généralités</a></li>
+        <li><a href="#git">C'est quoi un Terminal</a></li>
+        <li><a href="#survy">GUIDE DE SURVIE GIT</a></li>
+      </ol>
 
-      
+
+    <h4 id="generality" >Generalités</h4>
+<p>Linus Torvalds prononce [ˈɡɪt] avec un ɡ dur13.
+
+Le magazine PC World nous apprend que « quand on lui a demandé pourquoi il avait appelé son logiciel “git”, qui est à peu près l'équivalent de “connard” en argot britannique14,15, Linus Torvalds a répondu “je ne suis qu'un sale égocentrique, donc j'appelle tous mes projets d'après ma propre personne. D'abord Linux, puis Git.”16 ».</p>
+    <h4 id="git">C'est quoi GIT</h4>
+      <p>  Git est un logiciel de gestion de versions décentralisé. C'est un logiciel libre créé par Linus Torvalds, auteur du noyau Linux, et distribué selon les termes de la licence publique générale GNU version 2</p>
+
+    <h4 id="survy">GUIDE DE SURVIE GIT</h4>
 
 
+    <table>
+      <thead>
+        <tr>
+          <th>Je veux démarrer une feature</th>
+          <td>(master) git status <br>
+          => clean <br>
+          (master) git pull origin master <br>
+          (master) git checkout -b feature-name</td>
+        </tr>
+        <tr>
+          <th>Je veux terminer ma feature</th>
+          <td>(feature-name) git add <br>
+          (feature-name) git commit -m 'XXXXXXXXXXXXXXXXX' <br>
+          (feature-name) git push origin feature-name <br>
+          # je vais sur GitHub créer une Pull Request <br>
+
+          # je me remets sur master pour démarrer une nouvelle feature <br>
+          (feature-name) git status <br>
+          => clean <br>
+          (feature-name) git checkout master</td>
+        </tr>
+        <tr>
+          <th>Je mets à jour mon master</th>
+          <td>(feature-name) git status <br>
+          => cleanbr
+          (feature-name) git checkout master</td>
+        </tr>
+        <tr>
+          <th>Je travaille sur ma branche, je veux les modifs de master</th>
+          <td>(feature-name) git add <br>
+          (feature-name) git commit -m 'WIP'<br>
+          (feature-name) git status <br>
+          => clean <br>
+          (feature-name) git checkout master <br>
+          (master) git pull origin master <br>
+          (master) git checkout feature-name <br>
+          (feature-name) git merge master </td>
+        </tr>
+      </thead>
+</table>
 
 <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
